@@ -35,15 +35,21 @@ class MyApp extends StatelessWidget {
   {
     return const MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.blueGrey,
         body: Center(
           child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('0',
-            style: TextStyle(color:Color.fromRGBO(0, 0, 0, 1),
-                fontSize: 30,
+            style: 
+            TextStyle(
+              color:Color.fromRGBO(255, 255, 255, 1),
+                fontSize: 60,
                 fontFamily: AutofillHints.jobTitle,
-                fontWeight: FontWeight.bold),
+                fontWeight: FontWeight.bold
+                ),
+            ),
+            TextField(
                 
             ),
           
