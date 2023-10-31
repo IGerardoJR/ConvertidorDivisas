@@ -33,36 +33,62 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context)
   {
-    return const MaterialApp(
+    final border =  OutlineInputBorder(
+                      // Color(0xAARRGGBB)
+                      // 0xFF000000
+                      borderSide: BorderSide(
+                        color: Colors.black,  
+                        width: 3.0,
+                        style: BorderStyle.solid,
+                      ),
+                      borderRadius:
+                        BorderRadius.circular(20),
+                      
+                    );
+
+    return  MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         body: Center(
           child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            
             Text('0',
             style: 
             TextStyle(
               color:Color.fromRGBO(255, 255, 255, 1),
-                fontSize: 60,
-                fontFamily: AutofillHints.jobTitle,
+                fontSize: 50,
                 fontWeight: FontWeight.bold
                 ),
             ),
             TextField(
-                
-            ),
-          
-          ],  
+                style:TextStyle(
+                  color:Colors.black,
+                  fontWeight: FontWeight.bold
+                ),
+                decoration: InputDecoration(
+                    hintText: 'Porfavor, introduzca el valor en MXN', 
+                    
+                    hintStyle: TextStyle(
+                        color:Colors.black
+                    ),
+                    prefixIcon: Icon(
+                        Icons.monetization_on_outlined,
+                    ),
+                    prefixIconColor: Colors.black,
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: border,
+                    enabledBorder: border,
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+            ],  
         ),
        ),  
       )
     );
-
-
-    // return MaterialApp(
-    //   home: CurrencyConverterMaterialPage(),
-    // );
   }
 
   
