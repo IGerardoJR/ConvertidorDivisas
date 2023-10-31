@@ -53,41 +53,65 @@ class MyApp extends StatelessWidget {
           child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
-            Text('0',
-            style: 
-            TextStyle(
-              color:Color.fromRGBO(255, 255, 255, 1),
-                fontSize: 50,
-                fontWeight: FontWeight.bold
-                ),
-            ),
-            TextField(
-                style:TextStyle(
-                  color:Colors.black,
+            Container(
+              padding: const EdgeInsets.all(10), // Se encarga de lo de adentro.
+              margin: const EdgeInsets.all(10), // Se encarga lo de fuera.
+              
+              // color: Colors.black,
+              child: Text('0',
+              textAlign:TextAlign.center ,
+              style: 
+              TextStyle(
+                color:Color.fromRGBO(255, 255, 255, 1),
+                  fontSize: 50,
                   fontWeight: FontWeight.bold
-                ),
-                decoration: InputDecoration(
-                    hintText: 'Porfavor, introduzca el valor en MXN', 
-                    
-                    hintStyle: TextStyle(
-                        color:Colors.black
-                    ),
-                    prefixIcon: Icon(
-                        Icons.monetization_on_outlined,
-                    ),
-                    prefixIconColor: Colors.black,
-                    filled: true,
-                    fillColor: Colors.white,
-                    focusedBorder: border,
-                    enabledBorder: border,
+                  
                   ),
-                  keyboardType: TextInputType.number,
-                ),
-            ],  
+              ),
+            ),
+            // Padding 
+            // Container
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                    style:TextStyle(
+                      color:Colors.black,
+                      fontWeight: FontWeight.bold
+                    ),
+                    decoration: InputDecoration(
+                        hintText: 'Porfavor, introduzca el valor en MXN', 
+                        
+                        hintStyle: TextStyle(
+                            color:Colors.black
+                        ),
+                        prefixIcon: Icon(
+                            Icons.monetization_on_outlined,
+                        ),
+                        prefixIconColor: Colors.black,
+                        filled: true,
+                        fillColor: Colors.white,
+                        focusedBorder: border,
+                        enabledBorder: border,
+                        
+                      ),
+                      keyboardType: TextInputType.number,
+                    ),
+              ),
+                
+            ),
+            
+            ], 
+             
         ),
-       ),  
+        
+       ),
+         
+       
+
+       
       )
+      
     );
   }
 
