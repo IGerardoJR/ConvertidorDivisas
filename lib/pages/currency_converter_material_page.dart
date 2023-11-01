@@ -80,13 +80,14 @@ class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage
 
               // color: Colors.black,
               child: Text(
-                _result.toString(),
+                _result.toStringAsFixed(2) + ' USD',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Color.fromRGBO(255, 255, 255, 1),
                     fontSize: 50,
                     fontWeight: FontWeight.bold),
               ),
+              
             ),
             // Padding
             // Container

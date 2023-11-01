@@ -14,12 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return const MaterialApp(
-      // home: CurrencyConverterMaterialPage(),
-      home: Scaffold(
-        body: Center(child: Text('Test'),
-        )
-      )
-      
+      home: CurrencyConverterMaterialPage(),      
     );
   }
 }
