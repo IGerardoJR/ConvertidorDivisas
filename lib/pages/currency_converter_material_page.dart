@@ -25,33 +25,29 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 // 2. Cupertino Design
 
 class CurrencyConverterMaterialPage extends StatefulWidget{
-   CurrencyConverterMaterialPage({super.key}){
-    print('Constructor');
-
-  }
+   const CurrencyConverterMaterialPage({super.key});
 
 
   @override
-  State<CurrencyConverterMaterialPage> createState() {
-    print('create state');
-   return _CurrencyConverterMaterialPage();
-  }  
+  State<CurrencyConverterMaterialPage> createState()   
+   => _CurrencyConverterMaterialPage();
+  
 }
 
 class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage>{
   final TextEditingController _controller = TextEditingController();
-    late double _result = 0.0;
+    double _result = 0;
 
+  @override
   void initState(){
     // TODO : Initi state
     super.initState();
-    print('rebuild');
   }
 
   @override
-  Widget build(BuildContext )
+  Widget build(BuildContext context)
   {
-    print('rebuild function');
+    print('rebuild');
     final border = OutlineInputBorder(
       // Color(0xAARRGGBB)
       // 0xFF000000
@@ -60,7 +56,7 @@ class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage
         width: 3.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(5),
     );
 
     return MaterialApp(
@@ -124,10 +120,9 @@ class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () => {
-                  print(_controller.text),
-                  print(double.parse(_controller.text ) / 18.71),
-                  _result = double.parse(_controller.text) / 18.71,
-                  print('And the result is: $_result'),
+                  setState(() { 
+                  _result = double.parse(_controller.text) / 18.71;
+                  }),     
                 },
                 style: ButtonStyle(
                     elevation: const MaterialStatePropertyAll(20),
