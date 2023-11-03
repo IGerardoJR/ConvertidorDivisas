@@ -37,6 +37,7 @@ class CurrencyConverterMaterialPage extends StatefulWidget{
 class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage>{
   final TextEditingController _controller = TextEditingController();
     double _result = 0;
+    String _hint = "Porfavor, introduzca el valor en MXN";
 
   @override
   void initState(){
@@ -99,7 +100,7 @@ class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                   decoration: InputDecoration(
-                    hintText: 'Porfavor, introduzca el valor en MXN',
+                    hintText: _hint,
                     hintStyle: TextStyle(color: Colors.black),
                     prefixIcon: Icon(
                       Icons.monetization_on_outlined,
@@ -136,7 +137,46 @@ class _CurrencyConverterMaterialPage extends State<CurrencyConverterMaterialPage
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)))),
                 child: const Text('Convertir'),
+
+                
               ),
+              
+            ),
+            // Boton para limipiar texto
+            Padding(padding: const EdgeInsets.all(20),
+            child: ElevatedButton(
+              onPressed: () => {
+                setState(() {
+                  _controller.clear();
+                  _result = 0;
+                  _hint = "Introduce un nuevo valor!";
+                })
+              },
+              style: ButtonStyle(
+                elevation: const MaterialStatePropertyAll(20),
+                backgroundColor: const MaterialStatePropertyAll(Colors.black),
+                foregroundColor: const MaterialStatePropertyAll(Colors.white),
+                fixedSize: const MaterialStatePropertyAll(Size(double.maxFinite, 50)),
+                shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))
+              ),
+              child: const Text('Limpiar'),
+            ),
+            ),
+            Padding(padding: const EdgeInsets.all(10),
+            child:ElevatedButton(
+              child: Text('Salir'),
+              onPressed: () => {
+                setState(() {
+                  exit(0);
+                })
+              },
+              style: ButtonStyle(
+                elevation: const MaterialStatePropertyAll(20),
+                shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                backgroundColor: const MaterialStatePropertyAll(Colors.black),
+                foregroundColor: MaterialStatePropertyAll(Colors.white),
+                fixedSize: const MaterialStatePropertyAll(Size(double.maxFinite, 50)))
+              ),  
             ),
           ],
         ),
